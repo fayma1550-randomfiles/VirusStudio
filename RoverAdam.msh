@@ -1,0 +1,59 @@
+[MASH Script]
+Version=7.5
+
+[Characters]
+Rover=Rover.acs
+Mcafee=Mcafee.acs
+
+[LanguageIDs]
+Rover=&H409
+Mcafee=&H409
+
+[Script]
+Rover.Show
+Rover.Width = 256
+Rover.Height = 256
+Rover.MoveTo 1105, 331
+Rover.Speak "", "C:\Users\fayma\Downloads\compressed (1)\ElevenLabs_2025-09-18T21_41_30_Adam_pre_sp100_s50_sb75_v3.wav"
+Rover.Speak "", "C:\Users\fayma\Downloads\compressed (2)\ElevenLabs_2025-09-21T22_40_07_Adam_pre_sp100_s50_sb75_v3.wav"
+Rover.Play "Pleased"
+Rover.Speak "", "C:\Users\fayma\Downloads\compressed (2)\ElevenLabs_2025-09-21T22_41_03_Adam_pre_sp100_s50_sb75_v3.wav"
+Rover.Play "Embarrassed"
+Rover.Speak "", "C:\Users\fayma\Downloads\compressed (2)\ElevenLabs_2025-09-21T22_42_05_Adam_pre_sp100_s50_sb75_v3.wav"
+Rover.Speak "", "C:\Users\fayma\Downloads\compressed (2)\ElevenLabs_2025-09-21T22_46_50_Adam_pre_sp100_s50_sb75_v3.wav"
+Rover.Speak "", "C:\Users\fayma\Downloads\compressed (2)\ElevenLabs_2025-09-21T22_47_54_Adam_pre_sp100_s50_sb75_v3.wav"
+Rover.Hide
+Rover.Show
+Rover.Speak "", "C:\Users\fayma\Downloads\compressed (1)\ElevenLabs_2025-09-18T21_37_35_Adam_pre_sp100_s50_sb75_v3.wav"
+Rover.MoveTo 1107, 334
+Rover.Speak "", "C:\Users\fayma\Downloads\ElevenLabs_2025-09-21T22_59_35_Adam_pre_sp100_s50_sb75_v3 (1).wav"
+Rover.Play "Embarrassed"
+Rover.Play "Embarrassed"
+Rover.Play "Acknowledge"
+Set Req = Rover.Speak("", "C:\Users\fayma\Downloads\ElevenLabs_2025-09-21T23_01_28_Adam_pre_sp100_s50_sb75_v3.wav")
+WaitFor Req
+Mcafee.TTSModeID = "{CA141FD0-AC7F-11D1-97A3-006008273000}"
+Mcafee.Width = 610
+Mcafee.Height = 701
+Set Req = Mcafee.Show()
+WaitFor Req
+Rover.MoveTo 1112, 334
+Set Req = Rover.Hide()
+WaitFor Req
+Mcafee.Show
+Mcafee.MoveTo 1112, 334
+Mcafee.MoveTo 431, 68
+Mcafee.Speak "\Pit=85\\Chr=""Monotone""\you're PC has been risked of viruses by McAfee! click me to resolve"
+
+[Bookmarks]
+1=
+
+[BookmarkScript:1]
+BGHide
+
+[Commands]
+MenuName=MASH Menu
+ACO=Advanced Character Options|~|Advanced Character Options
+
+[CommandScript:ACO]
+AgentControl.PropertySheet.Visible = True
